@@ -14,6 +14,16 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
+    debugger;
+    if (count) {
+      var value = storage[begQueueIndex];
+      delete storage[begQueueIndex++];
+      count--;
+      
+      return value;  
+    } else {
+      return undefined;
+    }
   };
 
   someInstance.size = function() {
