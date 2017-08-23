@@ -8,6 +8,7 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
+    someInstance[someInstance.count++] = value;
   };
 
   someInstance.pop = function() {
