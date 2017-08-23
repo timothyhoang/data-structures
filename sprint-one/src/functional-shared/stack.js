@@ -4,6 +4,10 @@ var Stack = function() {
   var someInstance = {};
   var storage = {};
   var count = 0;
+
+  extend(someInstance, stackMethods);
+
+  return someInstance;
 };
 
 var stackMethods = {};
@@ -23,7 +27,7 @@ stackMethods.pop = function () {
 }
 
 stackMethods.size = function() {
-
+  return this.count;
 }
 
 
