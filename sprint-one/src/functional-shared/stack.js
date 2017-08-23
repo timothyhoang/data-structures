@@ -21,7 +21,14 @@ stackMethods.push = function(value) {
 }
 
 stackMethods.pop = function () {
+  if (this.count) {
+    var value = this.storage[this.count];
+    delete this.storage[this.count--];
 
+    return value;
+  } else {
+    return undefined;
+  }
 }
 
 stackMethods.size = function() {
