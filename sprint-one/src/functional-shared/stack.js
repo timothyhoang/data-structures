@@ -4,6 +4,7 @@ var Stack = function() {
   var someInstance = {count: 0, storage: {}};
 
   extend(someInstance, stackMethods);
+
   return someInstance;
 };
 
@@ -16,7 +17,7 @@ var extend = function (destination, source) {
 }
 
 stackMethods.push = function(value) {
-
+  this.storage[++this.count] = value;
 }
 
 stackMethods.pop = function () {
