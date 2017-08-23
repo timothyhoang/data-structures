@@ -8,6 +8,12 @@ var Stack = function() {
 
 var stackMethods = {};
 
+var extend = function (destination, source) {
+  for (var key in source) {
+    destination[key] = source[key];
+  }
+}
+
 stackMethods.push = function(value) {
 
 }
