@@ -12,6 +12,12 @@ var Stack = function() {
   };
 
   someInstance.pop = function() {
+    if (someInstance.count) {
+      var value = someInstance[someInstance.count];
+      delete someInstance[someInstance.count--];
+
+      return value;
+    }
   };
 
   someInstance.size = function() {
