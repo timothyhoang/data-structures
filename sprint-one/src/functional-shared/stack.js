@@ -7,7 +7,7 @@ var Stack = function() {
   };
   
   _.extend(someInstance, stackMethods);
-  
+
   return someInstance;
 };
 
@@ -26,6 +26,31 @@ var stackMethods = {
   size: function() {
     return this.numElements;
   }
+};
+
+var extend = function (destination, source) {
+  for (var key in source) {
+    destination[key] = source[key];
+  }
+};
+
+stackMethods.push = function(value) {
+  this.storage[++this.count] = value;
+};
+
+stackMethods.pop = function () {
+  if (this.count) {
+    var value = this.storage[this.count];
+    delete this.storage[this.count--];
+
+    return value;
+  } else {
+    return undefined;
+  }
+};
+
+stackMethods.size = function() {
+  return this.count;
 };
 
 
