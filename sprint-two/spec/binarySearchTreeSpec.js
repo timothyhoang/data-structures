@@ -36,4 +36,13 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3]);
   });
+  
+  it('should throw an error when checking if undefined value is in tree', function() {
+    var checkIfTreeContainsUndefinedValue = function() {
+      array.contains(undefined);      
+    };
+    
+    expect(checkIfTreeContainsUndefinedValue).to.throw();
+  });
+  
 });

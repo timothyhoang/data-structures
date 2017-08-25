@@ -41,4 +41,9 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should not have children for new trees', function() {
+    expect(tree.children.length).to.equal(0);
+  });
+
+
 });

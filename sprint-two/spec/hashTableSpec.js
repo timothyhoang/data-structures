@@ -73,4 +73,12 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+  
+  it('should not throw an error when removing an element from an empty hash', function() {
+    var removeElementFromEmptyHashTable = function() {
+      hashTable.remove('Steven');  
+    };
+    
+    expect(removeElementFromEmptyHashTable).to.not.throw();
+  });
 });

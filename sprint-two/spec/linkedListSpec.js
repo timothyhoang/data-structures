@@ -51,5 +51,12 @@ describe('linkedList', function() {
     expect(linkedList.contains(4)).to.equal(false);
   });
 
+  it('should be null after removing last element from linkedList', function() {
+    linkedList.addToTail(4);
+    linkedList.removeHead(4);
+    expect(linkedList.head).to.equal(null);
+    expect(linkedList.tail).to.equal(null);
+  });
+
   // add more tests here to test the functionality of linkedList
 });
