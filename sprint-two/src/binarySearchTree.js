@@ -24,6 +24,10 @@ bstMethods = {
   },
   
   contains: function(value) {
+    if (value === undefined) {
+      throw new Error('ERROR: value cannot be undefined');
+    }
+    
     if (this.value > value) {
       if (this.left === null) {
         return false;

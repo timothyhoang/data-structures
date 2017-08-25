@@ -32,7 +32,7 @@ HashTable.prototype.retrieve = function(k) {
 HashTable.prototype.remove = function(k) {
   var index = getIndexBelowMaxForKey(k, this._limit);
   
-  if (this._storage.get(index).has(k)) {
+  if (this._storage.get(index) && this._storage.get(index).has(k)) {
     this._storage.get(index).delete(k);
     this._numElements--;
     
